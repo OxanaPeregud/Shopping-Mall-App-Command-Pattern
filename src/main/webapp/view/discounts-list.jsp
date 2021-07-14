@@ -16,13 +16,11 @@
 <body>
 
 <%@include file="login-operations.jsp" %>
-<button type="button" class="button"><a class="homepage" href="map"><fmt:message key="label.back"/></a></button>
+<%@include file="dropdown-admin.jsp" %>
 
 <div>
     <h1><fmt:message key="label.app"/></h1>
 </div>
-
-<%@include file="dropdown-db.jsp" %>
 
 <div>
     <form action="list-discounts" method="post">
@@ -63,10 +61,6 @@
 
         </table>
     </form>
-
-    <p>
-        <a href="${pageContext.request.contextPath}/choose-locale"><fmt:message key="label.changeLang"/></a>
-    </p>
 
 </div>
 </body>

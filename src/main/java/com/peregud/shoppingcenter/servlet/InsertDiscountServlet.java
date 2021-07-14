@@ -19,6 +19,6 @@ public class InsertDiscountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) {
         Discount discount = ConverterImpl.convert(Discount.class, request);
         servletDiscountService.save(discount);
-        response.sendRedirect(request.getContextPath() + "/list-discounts");
+        response.sendRedirect(request.getContextPath() + "/list-shops");
     }
 }

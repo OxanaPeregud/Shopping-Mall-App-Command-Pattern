@@ -33,7 +33,7 @@ public class LoginServlet extends HttpServlet {
                 response.sendRedirect(request.getContextPath() + "/list-shops");
             } else if (request.getParameter("name").equals("manager")) {
                 session.setAttribute("manager", name);
-                response.sendRedirect(request.getContextPath() + "/display-all-shops");
+                response.sendRedirect(request.getContextPath() + "/display-discount-statistics");
             }
         } else {
             out.print("<h3 text-align: center;>Incorrect username or password!</h3>");

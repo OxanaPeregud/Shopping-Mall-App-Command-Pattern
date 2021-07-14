@@ -24,27 +24,6 @@
 
     <ul class="dd-menu">
         <li>
-            <a href="display-all-discounts"><fmt:message key="label.discounts"/></a>
-        </li>
-        <li>
-            <a href="display-all-shops"><fmt:message key="label.shops"/></a>
-        </li>
-        <li>
-            <a href="view/search-discount.jsp"><fmt:message key="label.searchDiscount(Discounts)"/></a>
-        </li>
-        <li>
-            <a href="view/search-discount-shop.jsp"><fmt:message key="label.searchDiscount(Shop)"/></a>
-        </li>
-        <li>
-            <a href="view/search-shop.jsp"><fmt:message key="label.search"/></a>
-        </li>
-        <li>
-            <a href="shops-actual-discounts"><fmt:message key="label.searchActualDiscount"/></a>
-        </li>
-        <li>
-            <a href="display-discount-statistics"><fmt:message key="label.discountStatistics"/></a>
-        </li>
-        <li>
             <a href="list-shops"><fmt:message key="label.allShops"/></a>
         </li>
         <li>
@@ -52,9 +31,6 @@
         </li>
         <li>
             <a href="new-shop"><fmt:message key="label.newShop"/></a>
-        </li>
-        <li>
-            <a href="new-discount"><fmt:message key="label.newDiscount"/></a>
         </li>
     </ul>
 </label>

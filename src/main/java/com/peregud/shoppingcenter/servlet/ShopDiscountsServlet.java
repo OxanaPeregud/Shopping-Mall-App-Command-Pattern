@@ -23,7 +23,6 @@ public class ShopDiscountsServlet extends HttpServlet {
         List<?> listDiscountShops = CriteriaSearchUtil.joinTablesShopDiscounts(id);
         request.setAttribute("shop", shop);
         request.setAttribute("listDiscountShops", listDiscountShops);
-        servletShopService.set(shop, id);
         request.getRequestDispatcher("view/display-shop-discounts.jsp").forward(request, response);
     }
 }

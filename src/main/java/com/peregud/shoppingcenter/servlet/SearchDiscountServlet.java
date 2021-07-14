@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
-@WebServlet("/search-discount")
+@WebServlet("/search-discount-shop")
 public class SearchDiscountServlet extends HttpServlet {
 
     @Override
@@ -21,9 +21,9 @@ public class SearchDiscountServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         int minimumDiscount = Integer.parseInt(request.getParameter("minimumDiscount"));
-        List<?> listDiscounts = CriteriaSearchUtil.minimumDiscount(minimumDiscount);
+        List<?> listDiscountShops = CriteriaSearchUtil.joinTablesMinimumDiscount(minimumDiscount);
         request.setAttribute("minimumDiscount", minimumDiscount);
-        request.setAttribute("listDiscounts", listDiscounts);
-        request.getRequestDispatcher("view/display-discounts.jsp").forward(request, response);
+        request.setAttribute("listDiscountShops", listDiscountShops);
+        request.getRequestDispatcher("view/display-discount-shops.jsp").forward(request, response);
     }
 }

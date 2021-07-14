@@ -15,18 +15,16 @@
 
 <body>
 
-<button type="button" class="button"><a class="homepage" href="map"><fmt:message key="label.back"/></a></button>
+<%@include file="login-operations.jsp" %>
 
 <div>
     <h1><fmt:message key="label.app"/></h1>
 </div>
 
-<%@include file="dropdown-client.jsp" %>
-
 <div>
     <form action="display-discount-statistics" method="post">
         <table id="customers">
-            <caption><h2><fmt:message key="label.discountStatistics"/></h2></caption>
+            <caption><h2><fmt:message key="label.statistics"/></h2></caption>
             <tr>
                 <th><fmt:message key="label.discount"/></th>
                 <th><fmt:message key="label.count"/></th>

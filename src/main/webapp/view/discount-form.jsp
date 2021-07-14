@@ -73,7 +73,7 @@
                 <label><fmt:message key="label.shop"/></label>
                 <label>
                     <input type="text" name="shopId"
-                           value="<c:out value='${discount.shop}' />"
+                           value="<c:out value='${shop.id}' />"
                     />
                 </label>
                 <div class="error" id="shopErr"></div>

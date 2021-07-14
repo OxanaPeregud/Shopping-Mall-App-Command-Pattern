@@ -7,8 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthManagerFilter", urlPatterns = {"/display-all-shops", "/display-all-discounts",
-        "/display-discount-statistics"})
+@WebFilter(filterName = "AuthManagerFilter", urlPatterns = {"/display-discount-statistics"})
 public class AuthManagerFilter implements Filter {
 
     @Override

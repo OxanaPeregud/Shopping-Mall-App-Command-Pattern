@@ -7,9 +7,9 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(filterName = "AuthAdminFilter", urlPatterns = {"/list-shops", "/insert-shop", "/new-shop",
-        "/update-shop", "/delete-shop", "/list-discounts", "/insert-discount", "/new-discount",
-        "/update-discount", "/delete-discount"})
+@WebFilter(filterName = "AuthAdminFilter", urlPatterns = {"/list-shops", "/insert-shop", "/new-shop", "/update-shop",
+        "/edit-shop", "/delete-shop", "/list-discounts", "/insert-discount", "/set-discount", "/update-discount",
+        "/edit-discount", "/delete-discount"})
 public class AuthAdminFilter implements Filter {
 
     @Override

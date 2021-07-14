@@ -16,13 +16,9 @@
 
 <body>
 
-<button type="button" class="button"><a class="homepage" href="map"><fmt:message key="label.back"/></a></button>
-
 <div>
     <h1><fmt:message key="label.app"/></h1>
 </div>
-
-<%@include file="dropdown-client.jsp" %>
 
 <div>
 
@@ -48,10 +44,6 @@
 <div class="link">
     <a href="javascript:history.back()"><fmt:message key="label.goBack"/></a>
 </div>
-
-<footer>
-    <a href="admin-login"><fmt:message key="label.dbAccess"/></a>
-</footer>
 
 </body>
 </html>
