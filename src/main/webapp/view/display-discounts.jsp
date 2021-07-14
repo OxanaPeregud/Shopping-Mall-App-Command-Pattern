@@ -51,12 +51,7 @@
 
         </table>
     </form>
-
 </div>
-
-<footer>
-    <a href="admin-login"><fmt:message key="label.dbAccess"/></a>
-</footer>
 
 </body>
 </html>

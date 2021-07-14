@@ -38,7 +38,7 @@
     </div>
 
     <p>
-        <a href="${pageContext.request.contextPath}/display-all-discounts"><fmt:message key="label.allDiscounts"/></a>
+        <a href="javascript:history.back()"><fmt:message key="label.goBack"/></a>
     </p>
 
 </form>

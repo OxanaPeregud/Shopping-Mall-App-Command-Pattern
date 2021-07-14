@@ -55,15 +55,7 @@
 
         </table>
     </form>
-
 </div>
-
-<footer>
-    <a href="admin-login"><fmt:message key="label.dbAccess"/></a>
-    <br>
-    <br>
-    <a href="admin-login"><fmt:message key="label.discountStatistics"/></a>
-</footer>
 
 </body>
 </html>

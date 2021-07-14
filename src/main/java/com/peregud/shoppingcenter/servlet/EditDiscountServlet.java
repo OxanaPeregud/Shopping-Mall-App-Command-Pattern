@@ -24,6 +24,6 @@ public class EditDiscountServlet extends HttpServlet {
         request.setAttribute("discount", discount);
         Shop shop = servletShopService.getById(id);
         request.setAttribute("shop", shop);
-        request.getRequestDispatcher("view/discount-form.jsp").forward(request, response);
+        request.getRequestDispatcher("view/edit-discount-form.jsp").forward(request, response);
     }
 }
