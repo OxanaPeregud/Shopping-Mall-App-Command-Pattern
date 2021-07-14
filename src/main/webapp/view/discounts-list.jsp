@@ -15,7 +15,7 @@
 
 <body>
 
-<%@include file="login-operations.jsp" %>
+<%@include file="logout.jsp" %>
 <%@include file="dropdown-admin.jsp" %>
 
 <div>

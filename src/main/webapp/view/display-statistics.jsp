@@ -15,7 +15,7 @@
 
 <body>
 
-<%@include file="login-operations.jsp" %>
+<%@include file="logout.jsp" %>
 
 <div>
     <h1><fmt:message key="label.app"/></h1>
@@ -39,12 +39,7 @@
 
         </table>
     </form>
-
 </div>
-
-<footer>
-    <a href="admin-login"><fmt:message key="label.dbAccess"/></a>
-</footer>
 
 </body>
 </html>

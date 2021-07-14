@@ -76,13 +76,15 @@
     <div class="nav_div"><a href="${pageContext.request.contextPath}/display-all-shops"
                             data-ix="fade-down-on-load" class="brand-2 w-nav-brand">
         <img src="logo.png" alt="Shopping Mall logo" class="brand-logo"/></a>
-        <nav role="navigation"
 
-             class="nav-menu w-nav-menu"><a href="${pageContext.request.contextPath}/display-all-shops"
-                                            class="nav-link w-nav-link"><fmt:message key="label.shops"/></a>
-
-            <a href="${pageContext.request.contextPath}/contact" class="nav-link w-nav-link">
-                <fmt:message key="label.contact"/></a></nav>
+        <nav role="navigation" class="nav-menu w-nav-menu">
+            <a href="${pageContext.request.contextPath}/display-all-shops"
+               class="nav-link w-nav-link"><fmt:message key="label.shops"/></a>
+            <a href="${pageContext.request.contextPath}/contact"
+               class="nav-link w-nav-link"><fmt:message key="label.contact"/></a>
+            <a href="${pageContext.request.contextPath}/admin-login"
+               class="nav-link w-nav-link"><fmt:message key="label.signIn"/></a>
+        </nav>
 
         <div class="menu-button w-nav-button">
             <div class="menu-text">MENU</div>

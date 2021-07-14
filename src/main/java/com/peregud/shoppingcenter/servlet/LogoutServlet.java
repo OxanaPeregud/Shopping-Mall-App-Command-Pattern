@@ -15,10 +15,10 @@ public class LogoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        request.getRequestDispatcher("view/login-operations.jsp").include(request, response);
+        request.getRequestDispatcher("view/logout.jsp").include(request, response);
         HttpSession session = request.getSession();
         session.invalidate();
-        response.sendRedirect(request.getContextPath() + "/choose-locale");
+        response.sendRedirect(request.getContextPath() + "/map");
         out.close();
     }
 }

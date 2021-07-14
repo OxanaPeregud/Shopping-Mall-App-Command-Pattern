@@ -9,12 +9,11 @@
 <html lang="${sessionScope.lang}">
 
 <head>
-    <title>Login Operations</title>
+    <title>Sign out</title>
 </head>
 <body>
 
-<a href="${pageContext.request.contextPath}/admin-login">Login</a> |
-<a href="${pageContext.request.contextPath}/logout">Logout</a> |
+<a href="${pageContext.request.contextPath}/logout">Sign out</a>
 <hr>
 
 </body>
