@@ -2,7 +2,6 @@ package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.command.CommandType;
-import com.peregud.shoppingcenter.servlet.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,35 +14,35 @@ public class CommandImpl {
 
     static {
         COMMANDS = new HashMap<>();
-        COMMANDS.put(CHOOSE_LOCALE, new ChooseLocaleServlet());
-        COMMANDS.put(MAP, new MapServlet());
-        COMMANDS.put(CONTACT, new ContactServlet());
-        COMMANDS.put(ADMIN_LOGIN, new AdminLoginServlet());
-        COMMANDS.put(DELETE_DISCOUNT, new DeleteDiscountServlet());
-        COMMANDS.put(DELETE_SHOP, new DeleteShopServlet());
-        COMMANDS.put(DISPLAY_SHOPS, new DisplayAllShopsServlet());
-        COMMANDS.put(DISPLAY_DISCOUNTS, new DisplayAllDiscountsServlet());
-        COMMANDS.put(DISCOUNT_STATISTICS, new DisplayDiscountStatisticsServlet());
-        COMMANDS.put(EDIT_DISCOUNT, new EditDiscountServlet());
-        COMMANDS.put(EDIT_SHOP, new EditShopServlet());
-        COMMANDS.put(INFO_DISCOUNT, new InfoDiscountServlet());
-        COMMANDS.put(INFO_SHOP, new InfoShopServlet());
-        COMMANDS.put(LOGIN, new LoginServlet());
-        COMMANDS.put(LOGOUT, new LogoutServlet());
-        COMMANDS.put(NEW_SHOP, new NewShopServlet());
-        COMMANDS.put(SEARCH_DISCOUNT, new SearchDiscountServlet());
-        COMMANDS.put(SEARCH_SHOP, new SearchShopServlet());
-        COMMANDS.put(SET_DISCOUNT, new SetDiscountServlet());
-        COMMANDS.put(SHOP_DISCOUNTS, new ShopDiscountsServlet());
-        COMMANDS.put(SHOP_ACTUAL_DISCOUNTS, new ShopsActualDiscountsServlet());
-        COMMANDS.put(UPDATE_DISCOUNT, new UpdateDiscountServlet());
-        COMMANDS.put(UPDATE_SHOP, new UpdateShopServlet());
-        COMMANDS.put(LIST_DISCOUNTS, new ListDiscountsServlet());
-        COMMANDS.put(DELETE_LIST_DISCOUNTS, new DeleteListDiscountsServlet());
-        COMMANDS.put(LIST_SHOPS, new ListShopsServlet());
-        COMMANDS.put(DELETE_LIST_SHOPS, new DeleteListShopsServlet());
-        COMMANDS.put(INSERT_DISCOUNT, new InsertDiscountServlet());
-        COMMANDS.put(INSERT_SHOP, new InsertShopServlet());
+        COMMANDS.put(CHOOSE_LOCALE, new ChooseLocaleCommand());
+        COMMANDS.put(MAP, new MapCommand());
+        COMMANDS.put(CONTACT, new ContactCommand());
+        COMMANDS.put(ADMIN_LOGIN, new AdminLoginCommand());
+        COMMANDS.put(DELETE_DISCOUNT, new DeleteDiscountCommand());
+        COMMANDS.put(DELETE_SHOP, new DeleteShopCommand());
+        COMMANDS.put(DISPLAY_SHOPS, new DisplayAllShopsCommand());
+        COMMANDS.put(DISPLAY_DISCOUNTS, new DisplayAllDiscountsCommand());
+        COMMANDS.put(DISCOUNT_STATISTICS, new DisplayDiscountStatisticsCommand());
+        COMMANDS.put(EDIT_DISCOUNT, new EditDiscountCommand());
+        COMMANDS.put(EDIT_SHOP, new EditShopCommand());
+        COMMANDS.put(INFO_DISCOUNT, new InfoDiscountCommand());
+        COMMANDS.put(INFO_SHOP, new InfoShopCommand());
+        COMMANDS.put(LOGIN, new LoginCommand());
+        COMMANDS.put(LOGOUT, new LogoutCommand());
+        COMMANDS.put(NEW_SHOP, new NewShopCommand());
+        COMMANDS.put(SEARCH_DISCOUNT, new SearchDiscountCommand());
+        COMMANDS.put(SEARCH_SHOP, new SearchShopCommand());
+        COMMANDS.put(SET_DISCOUNT, new SetDiscountCommand());
+        COMMANDS.put(SHOP_DISCOUNTS, new ShopDiscountsCommand());
+        COMMANDS.put(SHOP_ACTUAL_DISCOUNTS, new ShopsActualDiscountsCommand());
+        COMMANDS.put(UPDATE_DISCOUNT, new UpdateDiscountCommand());
+        COMMANDS.put(UPDATE_SHOP, new UpdateShopCommand());
+        COMMANDS.put(LIST_DISCOUNTS, new ListDiscountsCommand());
+        COMMANDS.put(DELETE_LIST_DISCOUNTS, new DeleteListDiscountsCommand());
+        COMMANDS.put(LIST_SHOPS, new ListShopsCommand());
+        COMMANDS.put(DELETE_LIST_SHOPS, new DeleteListShopsCommand());
+        COMMANDS.put(INSERT_DISCOUNT, new InsertDiscountCommand());
+        COMMANDS.put(INSERT_SHOP, new InsertShopCommand());
     }
 
     public static Command getCommand(String name) throws Exception {

@@ -1,4 +1,4 @@
-package com.peregud.shoppingcenter.servlet;
+package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.model.Shop;
@@ -11,7 +11,7 @@ import java.io.IOException;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class EditShopServlet implements Command {
+public class InfoShopCommand implements Command {
     private final ServletShopService servletShopService = new ServletShopService();
 
     @Override
@@ -19,6 +19,6 @@ public class EditShopServlet implements Command {
         int id = Integer.parseInt(request.getParameter(PARAM_ID));
         Shop shop = servletShopService.getById(id);
         request.setAttribute(ATTR_SHOP, shop);
-        request.getRequestDispatcher("view/shop-form.jsp").forward(request, response);
+        request.getRequestDispatcher("view/shop-information.jsp").forward(request, response);
     }
 }

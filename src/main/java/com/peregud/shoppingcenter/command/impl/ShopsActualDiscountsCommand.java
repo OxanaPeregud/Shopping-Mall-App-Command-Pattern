@@ -1,4 +1,4 @@
-package com.peregud.shoppingcenter.servlet;
+package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.util.CriteriaSearchUtil;
@@ -11,7 +11,7 @@ import java.util.List;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class ShopsActualDiscountsServlet implements Command {
+public class ShopsActualDiscountsCommand implements Command {
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

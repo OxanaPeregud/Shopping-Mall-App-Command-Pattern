@@ -1,4 +1,4 @@
-package com.peregud.shoppingcenter.servlet;
+package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.service.ServletDiscountService;
@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class DeleteDiscountServlet implements Command {
+public class DeleteDiscountCommand implements Command {
     private final ServletDiscountService servletDiscountService = new ServletDiscountService();
 
     @Override

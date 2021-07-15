@@ -1,4 +1,4 @@
-package com.peregud.shoppingcenter.servlet;
+package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.model.Discount;
@@ -13,7 +13,7 @@ import java.io.IOException;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class EditDiscountServlet implements Command {
+public class EditDiscountCommand implements Command {
     private final ServletDiscountService servletDiscountService = new ServletDiscountService();
     private final ServletShopService servletShopService = new ServletShopService();
 

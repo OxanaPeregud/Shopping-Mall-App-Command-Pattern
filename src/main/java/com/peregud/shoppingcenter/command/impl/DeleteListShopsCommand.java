@@ -1,4 +1,4 @@
-package com.peregud.shoppingcenter.servlet;
+package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.service.ServletShopService;
@@ -11,11 +11,12 @@ import java.util.List;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class ListShopsServlet implements Command {
+public class DeleteListShopsCommand implements Command {
     private final ServletShopService servletShopService = new ServletShopService();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        servletShopService.deleteList(request.getParameterValues(PARAM_DELETE_SHOP));
         List<?> listShops = servletShopService.getList();
         request.setAttribute(ATTR_LIST_SHOPS, listShops);
         request.getRequestDispatcher("view/shops-list.jsp").forward(request, response);
