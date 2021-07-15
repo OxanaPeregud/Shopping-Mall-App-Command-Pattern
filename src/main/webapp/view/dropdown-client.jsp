@@ -30,10 +30,10 @@
             <a href=front-controller?command=DISPLAY_DISCOUNTS><fmt:message key="label.discounts"/></a>
         </li>
         <li>
-            <a href="view/search-discount-shop.jsp"><fmt:message key="label.searchDiscount"/></a>
+            <a href="search-discount-shop.jsp"><fmt:message key="label.searchDiscount"/></a>
         </li>
         <li>
-            <a href="view/search-shop.jsp"><fmt:message key="label.search"/></a>
+            <a href="search-shop.jsp"><fmt:message key="label.search"/></a>
         </li>
         <li>
             <a href=front-controller?command=SHOP_ACTUAL_DISCOUNTS><fmt:message key="label.searchActualDiscount"/></a>

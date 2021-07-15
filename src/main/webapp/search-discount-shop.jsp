@@ -10,23 +10,23 @@
 
 <head>
     <title><fmt:message key="label.search"/></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/search-style.css">
+    <link rel="stylesheet" href="search-style.css">
 </head>
 
 <body>
 
-<form name="search" action=front-controller?command=SEARCH_SHOP method="post">
+<form name="minimumDiscount" action=front-controller?command=SEARCH_DISCOUNT method="post">
 
     <div>
-        <h3><fmt:message key="label.search"/></h3>
+        <h3><fmt:message key="label.searchDiscount"/></h3>
     </div>
 
     <table class="center">
         <tr>
-            <td><fmt:message key="label.enter"/>:</td>
+            <td><fmt:message key="label.enterDiscount"/>:</td>
             <td>
                 <label>
-                    <input type="text" name="search"/>
+                    <input type="text" name="minimumDiscount"/>
                 </label>
             </td>
         </tr>
