@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action=front-controller?command=LOGIN method="post">
+<form action=controller?command=login method="post">
 
     Name:
     <label>

@@ -47,6 +47,6 @@ public class CommandImpl {
     }
 
     public static Command getCommand(String name) throws Exception {
-        return Optional.ofNullable(COMMANDS.get(CommandType.valueOf(name))).orElseThrow(Exception::new);
+        return Optional.ofNullable(COMMANDS.get(CommandType.valueOf(name.toUpperCase()))).orElseThrow(Exception::new);
     }
 }

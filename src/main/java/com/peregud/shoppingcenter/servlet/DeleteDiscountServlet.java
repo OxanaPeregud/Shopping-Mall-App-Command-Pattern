@@ -16,6 +16,6 @@ public class DeleteDiscountServlet implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter(PARAM_ID));
         servletDiscountService.delete(id);
-        response.sendRedirect("front-controller?command=LIST_DISCOUNTS");
+        response.sendRedirect("controller?command=list_discounts");
     }
 }

@@ -9,7 +9,7 @@ import java.io.IOException;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-@WebFilter(filterName = "AuthManagerFilter", urlPatterns = {"/display-discount-statistics"})
+@WebFilter(filterName = "AuthManagerFilter", urlPatterns = {"/controller?command=discount_statistics"})
 public class AuthManagerFilter implements Filter {
 
     @Override

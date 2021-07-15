@@ -19,11 +19,11 @@
 </h1>
 
 <div class="container">
-    <button type="button" class="button" style="vertical-align:middle"><a href=front-controller?command=CHOOSE_LOCALE&sessionLocale=en>
+    <button type="button" class="button" style="vertical-align:middle"><a href=controller?command=choose_locale&sessionLocale=en>
         <fmt:message key="label.lang.en"/></a>
     </button>
 
-    <button type="button" class="button" style="vertical-align:middle"><a href=front-controller?command=CHOOSE_LOCALE&sessionLocale=ru>
+    <button type="button" class="button" style="vertical-align:middle"><a href=controller?command=choose_locale&sessionLocale=ru>
         <fmt:message key="label.lang.ru"/></a>
     </button>
 </div>
@@ -34,7 +34,7 @@
 <h2>
     <c:if test="${not empty param.sessionLocale}">
         <fmt:message key="label.sessionChangeSuccess"/>
-        <button type="button" class="button1"><a href=front-controller?command=MAP>
+        <button type="button" class="button1"><a href=controller?command=map>
             <fmt:message key="label.startApp"/></a></button>
     </c:if>
 </h2>

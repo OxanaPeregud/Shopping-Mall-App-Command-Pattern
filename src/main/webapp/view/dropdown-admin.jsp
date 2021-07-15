@@ -24,13 +24,13 @@
 
     <ul class="dd-menu">
         <li>
-            <a href=front-controller?command=LIST_SHOPS><fmt:message key="label.allShops"/></a>
+            <a href=controller?command=list_shops><fmt:message key="label.allShops"/></a>
         </li>
         <li>
-            <a href=front-controller?command=LIST_DISCOUNTS><fmt:message key="label.allDiscounts"/></a>
+            <a href=controller?command=list_discounts><fmt:message key="label.allDiscounts"/></a>
         </li>
         <li>
-            <a href=front-controller?command=NEW_SHOP><fmt:message key="label.newShop"/></a>
+            <a href=controller?command=new_shop><fmt:message key="label.newShop"/></a>
         </li>
     </ul>
 </label>

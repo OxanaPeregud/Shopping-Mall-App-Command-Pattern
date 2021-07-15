@@ -19,6 +19,6 @@ public class UpdateDiscountServlet implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Discount discount = ConverterImpl.convert(Discount.class, request);
         servletDiscountService.save(discount);
-        response.sendRedirect("front-controller?command=LIST_DISCOUNTS");
+        response.sendRedirect("controller?command=list_discounts");
     }
 }

@@ -14,7 +14,7 @@ import java.io.IOException;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-@WebServlet("/front-controller")
+@WebServlet("/controller")
 public class FrontController extends HttpServlet {
 
     @SneakyThrows

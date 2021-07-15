@@ -73,16 +73,16 @@
 <body>
 <div data-collapse="small" data-animation="default" data-duration="400"
      role="banner" class="navbar w-nav">
-    <div class="nav_div"><a href=front-controller?command=DISPLAY_SHOPS
+    <div class="nav_div"><a href=controller?command=display_shops
                             data-ix="fade-down-on-load" class="brand-2 w-nav-brand">
         <img src="logo.png" alt="Shopping Mall logo" class="brand-logo"/></a>
 
         <nav role="navigation" class="nav-menu w-nav-menu">
-            <a href=front-controller?command=DISPLAY_SHOPS
+            <a href=controller?command=display_shops
                class="nav-link w-nav-link"><fmt:message key="label.shops"/></a>
-            <a href=front-controller?command=CONTACT
+            <a href=controller?command=contact
                class="nav-link w-nav-link"><fmt:message key="label.contact"/></a>
-            <a href=front-controller?command=ADMIN_LOGIN
+            <a href=controller?command=admin_login
                class="nav-link w-nav-link"><fmt:message key="label.signIn"/></a>
         </nav>
 

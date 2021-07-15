@@ -19,6 +19,6 @@ public class UpdateShopServlet implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Shop shop = ConverterImpl.convert(Shop.class, request);
         servletShopService.save(shop);
-        response.sendRedirect("front-controller?command=LIST_SHOPS");
+        response.sendRedirect("controller?command=list_shops");
     }
 }

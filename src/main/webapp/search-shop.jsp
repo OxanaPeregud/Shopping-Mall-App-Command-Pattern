@@ -15,7 +15,7 @@
 
 <body>
 
-<form name="search" action=front-controller?command=SEARCH_SHOP method="post">
+<form name="search" action=controller?command=search_shop method="post">
 
     <div>
         <h3><fmt:message key="label.search"/></h3>

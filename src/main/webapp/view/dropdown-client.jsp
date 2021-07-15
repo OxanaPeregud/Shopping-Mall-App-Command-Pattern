@@ -24,10 +24,10 @@
 
     <ul class="dd-menu">
         <li>
-            <a href=front-controller?command=DISPLAY_SHOPS><fmt:message key="label.shops"/></a>
+            <a href=controller?command=display_shops><fmt:message key="label.shops"/></a>
         </li>
         <li>
-            <a href=front-controller?command=DISPLAY_DISCOUNTS><fmt:message key="label.discounts"/></a>
+            <a href=controller?command=display_discounts><fmt:message key="label.discounts"/></a>
         </li>
         <li>
             <a href="search-discount-shop.jsp"><fmt:message key="label.searchDiscount"/></a>
@@ -36,7 +36,7 @@
             <a href="search-shop.jsp"><fmt:message key="label.search"/></a>
         </li>
         <li>
-            <a href=front-controller?command=SHOP_ACTUAL_DISCOUNTS><fmt:message key="label.searchActualDiscount"/></a>
+            <a href=controller?command=shop_actual_discounts><fmt:message key="label.searchActualDiscount"/></a>
         </li>
     </ul>
 </label>

@@ -9,9 +9,7 @@ import java.io.IOException;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-@WebFilter(filterName = "AuthAdminFilter", urlPatterns = {"/list-shops", "/insert-shop", "/new-shop", "/update-shop",
-        "/edit-shop", "/delete-shop", "/list-discounts", "/insert-discount", "/set-discount", "/update-discount",
-        "/edit-discount", "/delete-discount"})
+@WebFilter(filterName = "AuthAdminFilter", urlPatterns = {"/controller?command=list_shops"})
 public class AuthAdminFilter implements Filter {
 
     @Override

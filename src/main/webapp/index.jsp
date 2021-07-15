@@ -1,1 +1,1 @@
-<% response.sendRedirect(request.getContextPath() + "/front-controller?command=CHOOSE_LOCALE"); %>
+<% response.sendRedirect(request.getContextPath() + "/controller?command=choose_locale"); %>

@@ -26,10 +26,10 @@ public class LoginServlet implements Command {
             session.setAttribute(ATTR_NAME, name);
             if (request.getParameter(PARAM_NAME).equals(ATTR_ADMIN)) {
                 session.setAttribute(ATTR_ADMIN, name);
-                response.sendRedirect("front-controller?command=LIST_SHOPS");
+                response.sendRedirect("controller?command=list_shops");
             } else if (request.getParameter(PARAM_NAME).equals(ATTR_MANAGER)) {
                 session.setAttribute(ATTR_MANAGER, name);
-                response.sendRedirect("front-controller?command=DISCOUNT_STATISTICS");
+                response.sendRedirect("controller?command=discount_statistics");
             }
         } else {
             out.print("<h3 text-align: center;>Incorrect username or password!</h3>");

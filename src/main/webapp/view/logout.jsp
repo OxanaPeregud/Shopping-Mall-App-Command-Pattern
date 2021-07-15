@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<a href=front-controller?command=LOGOUT>Sign out</a>
+<a href=controller?command=logout>Sign out</a>
 <hr>
 
 </body>

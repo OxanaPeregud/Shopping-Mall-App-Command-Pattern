@@ -15,7 +15,7 @@
 
 <body>
 
-<form name="minimumDiscount" action=front-controller?command=SEARCH_DISCOUNT method="post">
+<form name="minimumDiscount" action=controller?command=search_discount method="post">
 
     <div>
         <h3><fmt:message key="label.searchDiscount"/></h3>

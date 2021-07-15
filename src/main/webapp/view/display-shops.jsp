@@ -15,7 +15,7 @@
 
 <body>
 
-<button type="button" class="button"><a class="homepage" href=front-controller?command=MAP>
+<button type="button" class="button"><a class="homepage" href=controller?command=map>
     <fmt:message key="label.back"/></a></button>
 
 <%@include file="dropdown-client.jsp" %>
@@ -25,7 +25,7 @@
 </div>
 
 <div>
-    <form action=front-controller?command=DISPLAY_SHOPS>
+    <form action=controller?command=display_shops>
         <table id="customers">
             <caption><h2><fmt:message key="label.shops"/></h2></caption>
             <tr>
@@ -45,11 +45,11 @@
                     <td><c:out value="${shop.description}"/></td>
                     <td><c:out value="${shop.location}"/></td>
                     <td>
-                        <a href=front-controller?command=INFO_SHOP&id=<c:out value='${shop.id}'/>>
+                        <a href=controller?command=info_shop&id=<c:out value='${shop.id}'/>>
                             <fmt:message key="label.fullShopInfo"/></a>
                     </td>
                     <td>
-                        <a href=front-controller?command=SHOP_DISCOUNTS&id=<c:out value='${shop.id}'/>>
+                        <a href=controller?command=shop_discounts&id=<c:out value='${shop.id}'/>>
                             <fmt:message key="label.shopDiscounts"/></a>
                     </td>
                 </tr>

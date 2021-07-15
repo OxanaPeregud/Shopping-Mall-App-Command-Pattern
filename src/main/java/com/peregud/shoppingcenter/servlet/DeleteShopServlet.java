@@ -16,6 +16,6 @@ public class DeleteShopServlet implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws IOException {
         int id = Integer.parseInt(request.getParameter(PARAM_ID));
         servletShopService.delete(id);
-        response.sendRedirect("front-controller?command=LIST_SHOPS");
+        response.sendRedirect("controller?command=list_shops");
     }
 }

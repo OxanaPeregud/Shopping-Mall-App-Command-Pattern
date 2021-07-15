@@ -23,7 +23,7 @@
 </div>
 
 <div>
-    <form action=front-controller?command=DELETE_LIST_SHOPS method="post">
+    <form action=controller?command=delete_list_shops method="post">
         <table id="customers">
             <caption><h2><fmt:message key="label.allShops"/></h2></caption>
             <tr>
@@ -48,7 +48,7 @@
                     <td><c:out value="${shop.mobile}"/></td>
                     <td><c:out value="${shop.email}"/></td>
                     <td>
-                        <a href=front-controller?command=EDIT_SHOP&id=<c:out value='${shop.id}'/>>
+                        <a href=controller?command=edit_shop&id=<c:out value='${shop.id}'/>>
                             <fmt:message key="label.edit"/></a>
                     </td>
                     <td>
@@ -56,11 +56,11 @@
                                       value="${shop.id}"><fmt:message key="label.delete"/></label>
                     </td>
                     <td>
-                        <a href=front-controller?command=SET_DISCOUNT&id=<c:out value='${shop.id}'/>>
+                        <a href=controller?command=set_discount&id=<c:out value='${shop.id}'/>>
                             <fmt:message key="label.newDiscount"/></a>
                     </td>
                     <td>
-                        <a href=front-controller?command=SHOP_DISCOUNTS&id=<c:out value='${shop.id}'/>>
+                        <a href=controller?command=shop_discounts&id=<c:out value='${shop.id}'/>>
                             <fmt:message key="label.shopDiscounts"/></a>
                     </td>
                 </tr>

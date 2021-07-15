@@ -18,7 +18,7 @@ public class LogoutServlet implements Command {
         request.getRequestDispatcher("view/logout.jsp").include(request, response);
         HttpSession session = request.getSession();
         session.invalidate();
-        response.sendRedirect("front-controller?command=MAP");
+        response.sendRedirect("controller?command=map");
         out.close();
     }
 }
