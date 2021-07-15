@@ -1,5 +1,6 @@
-package com.peregud.shoppingcenter.converter;
+package com.peregud.shoppingcenter.converter.impl;
 
+import com.peregud.shoppingcenter.converter.Converter;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.Shop;
 import com.peregud.shoppingcenter.service.ServletShopService;
@@ -10,7 +11,7 @@ import java.util.Optional;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class DiscountConverter implements Converter<Discount> {
+public class DiscountConverterImpl implements Converter<Discount> {
     private final ServletShopService servletShopService = new ServletShopService();
 
     @Override

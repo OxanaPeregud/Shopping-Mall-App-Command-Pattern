@@ -73,16 +73,16 @@
 <body>
 <div data-collapse="small" data-animation="default" data-duration="400"
      role="banner" class="navbar w-nav">
-    <div class="nav_div"><a href="${pageContext.request.contextPath}/display-all-shops"
+    <div class="nav_div"><a href=front-controller?command=DISPLAY_SHOPS
                             data-ix="fade-down-on-load" class="brand-2 w-nav-brand">
         <img src="logo.png" alt="Shopping Mall logo" class="brand-logo"/></a>
 
         <nav role="navigation" class="nav-menu w-nav-menu">
-            <a href="${pageContext.request.contextPath}/display-all-shops"
+            <a href=front-controller?command=DISPLAY_SHOPS
                class="nav-link w-nav-link"><fmt:message key="label.shops"/></a>
-            <a href="${pageContext.request.contextPath}/contact"
+            <a href=front-controller?command=CONTACT
                class="nav-link w-nav-link"><fmt:message key="label.contact"/></a>
-            <a href="${pageContext.request.contextPath}/admin-login"
+            <a href=front-controller?command=ADMIN_LOGIN
                class="nav-link w-nav-link"><fmt:message key="label.signIn"/></a>
         </nav>
 

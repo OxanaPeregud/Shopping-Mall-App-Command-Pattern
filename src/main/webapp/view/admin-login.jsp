@@ -5,7 +5,7 @@
 </head>
 <body>
 
-<form action="${pageContext.request.contextPath}/login" method="POST">
+<form action=front-controller?command=LOGIN method="post">
 
     Name:
     <label>

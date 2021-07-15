@@ -16,19 +16,19 @@
 
 <body>
 
-<button type="button" class="button"><a class="homepage" href="list-discounts">
+<button type="button" class="button"><a class="homepage" href=front-controller?command=LIST_DISCOUNTS>
     <fmt:message key="label.allDiscounts"/></a>
 </button>
 
 <div>
     <c:if test="${discount != null}">
     <form name="discountForm" onsubmit="return validateForm()"
-          action="${pageContext.request.contextPath}/update-discount" method="post">
+          action=front-controller?command=UPDATE_DISCOUNT method="post">
         </c:if>
 
         <c:if test="${discount == null}">
         <form name="discountForm" onsubmit="return validateForm()"
-              action="${pageContext.request.contextPath}/insert-discount" method="post">
+              action=front-controller?command=INSERT_DISCOUNT method="post">
             </c:if>
 
             <caption>

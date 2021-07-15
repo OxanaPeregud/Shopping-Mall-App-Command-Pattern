@@ -53,20 +53,4 @@ class ServletShopServiceTest extends GenerateDataForH2 {
         servletShopService.delete(Shop.class, shop1.getId());
         assertNotNull(servletShopService.getById(Shop.class, shop2.getId()));
     }
-
-    @SuppressWarnings("unchecked")
-    @Test
-    void selectIdForSet_success() {
-        ServletShopService servletShopService = mock(ServletShopService.class);
-        when(servletShopService.selectIdForSet(shop1, shop1.getId())).thenReturn(any(List.class));
-        assertEquals(any(List.class), servletShopService.selectIdForSet(shop1, shop1.getId()));
-    }
-
-    @SuppressWarnings("unchecked")
-    @Test
-    void selectIdForSet_fail() {
-        ServletShopService servletShopService = mock(ServletShopService.class);
-        when(servletShopService.selectIdForSet(shop1, shop1.getId())).thenReturn(any(List.class));
-        assertNotEquals(any(List.class), servletShopService.selectIdForSet(shop1, shop2.getId()));
-    }
 }

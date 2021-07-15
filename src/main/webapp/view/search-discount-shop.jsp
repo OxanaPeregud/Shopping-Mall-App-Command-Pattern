@@ -15,7 +15,7 @@
 
 <body>
 
-<form name="minimumDiscount" action="${pageContext.request.contextPath}/search-discount-shop" method="POST">
+<form name="minimumDiscount" action=front-controller?command=SEARCH_DISCOUNT method="post">
 
     <div>
         <h3><fmt:message key="label.searchDiscount"/></h3>

@@ -1,5 +1,6 @@
-package com.peregud.shoppingcenter.converter;
+package com.peregud.shoppingcenter.converter.impl;
 
+import com.peregud.shoppingcenter.converter.Converter;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.Shop;
 import lombok.Getter;
@@ -16,8 +17,8 @@ public class ConverterImpl {
     private static final Converter<Discount> DISCOUNT_CONVERTER;
 
     static {
-        SHOP_CONVERTER = new ShopConverter();
-        DISCOUNT_CONVERTER = new DiscountConverter();
+        SHOP_CONVERTER = new ShopConverterImpl();
+        DISCOUNT_CONVERTER = new DiscountConverterImpl();
 
         CONVERTER_MAP = new HashMap<>();
         CONVERTER_MAP.put(Shop.class, SHOP_CONVERTER);

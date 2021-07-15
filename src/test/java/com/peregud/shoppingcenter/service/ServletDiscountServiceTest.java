@@ -4,9 +4,7 @@ import com.peregud.shoppingcenter.GenerateDataForH2;
 import com.peregud.shoppingcenter.model.Discount;
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -48,23 +46,5 @@ class ServletDiscountServiceTest extends GenerateDataForH2 {
     void delete_success() {
         servletDiscountService.delete(Discount.class, discount2.getId());
         assertNull(servletDiscountService.getById(Discount.class, discount2.getId()));
-    }
-
-    @Test
-    void getSet_success() {
-        ServletDiscountService servletDiscountService = mock(ServletDiscountService.class);
-        Set<Discount> set = Set.of(discount1);
-        List<Integer> discountIdList = new ArrayList<>();
-        when(servletDiscountService.getSet(any())).thenReturn(set);
-        assertEquals(set, servletDiscountService.getSet(discountIdList));
-    }
-
-    @Test
-    void getSet_fail() {
-        ServletDiscountService servletDiscountService = mock(ServletDiscountService.class);
-        Set<Discount> set = Set.of(discount1);
-        List<Integer> discountIdList = new ArrayList<>();
-        when(servletDiscountService.getSet(any())).thenReturn(set);
-        assertNotEquals(Set.of(Discount.builder()), servletDiscountService.getSet(discountIdList));
     }
 }

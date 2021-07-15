@@ -1,5 +1,6 @@
-package com.peregud.shoppingcenter.converter;
+package com.peregud.shoppingcenter.converter.impl;
 
+import com.peregud.shoppingcenter.converter.Converter;
 import com.peregud.shoppingcenter.model.Shop;
 
 import javax.servlet.http.HttpServletRequest;
@@ -7,7 +8,7 @@ import java.util.Optional;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class ShopConverter implements Converter<Shop> {
+public class ShopConverterImpl implements Converter<Shop> {
 
     @Override
     public Shop convert(HttpServletRequest request) {

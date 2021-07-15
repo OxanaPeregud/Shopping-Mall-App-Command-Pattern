@@ -22,7 +22,7 @@
 </div>
 
 <div>
-    <form action="display-discount-statistics" method="post">
+    <form action=front-controller?command=DISCOUNT_STATISTICS>
         <table id="customers">
             <caption><h2><fmt:message key="label.statistics"/></h2></caption>
             <tr>

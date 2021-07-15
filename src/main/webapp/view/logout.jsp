@@ -13,7 +13,7 @@
 </head>
 <body>
 
-<a href="${pageContext.request.contextPath}/logout">Sign out</a>
+<a href=front-controller?command=LOGOUT>Sign out</a>
 <hr>
 
 </body>

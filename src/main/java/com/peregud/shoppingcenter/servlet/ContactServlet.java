@@ -1,17 +1,16 @@
 package com.peregud.shoppingcenter.servlet;
 
+import com.peregud.shoppingcenter.command.Command;
+
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@WebServlet("/contact")
-public class ContactServlet extends HttpServlet {
+public class ContactServlet implements Command {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("view/contact.jsp").forward(request, response);
     }
 }

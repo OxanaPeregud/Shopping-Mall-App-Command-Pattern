@@ -2,9 +2,7 @@ package com.peregud.shoppingcenter.service;
 
 import com.peregud.shoppingcenter.model.Discount;
 
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 public class ServletDiscountService extends ServletService<Discount> {
 
@@ -26,16 +24,5 @@ public class ServletDiscountService extends ServletService<Discount> {
 
     public void deleteList(String[] idList) {
         super.deleteList(Discount.class, idList);
-    }
-
-    public Set<Discount> getSet(List<Integer> discountIdList) {
-        Integer i;
-        Set<Discount> set = new HashSet<>();
-        for (Integer id : discountIdList) {
-            i = id;
-            Discount discount = super.getById(Discount.class, i);
-            set.add(discount);
-        }
-        return set;
     }
 }

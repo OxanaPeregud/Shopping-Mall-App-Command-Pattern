@@ -22,6 +22,7 @@
     <button type="button" class="button" style="vertical-align:middle"><a href="?sessionLocale=en"><fmt:message
             key="label.lang.en"/></a>
     </button>
+
     <button type="button" class="button" style="vertical-align:middle"><a href="?sessionLocale=ru"><fmt:message
             key="label.lang.ru"/></a>
     </button>

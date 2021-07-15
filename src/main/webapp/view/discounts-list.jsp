@@ -23,7 +23,7 @@
 </div>
 
 <div>
-    <form action="list-discounts" method="post">
+    <form action=front-controller?command=DELETE_LIST_DISCOUNTS method="post">
         <table id="customers">
             <caption><h2><fmt:message key="label.allDiscounts"/></h2></caption>
             <tr>
@@ -44,7 +44,8 @@
                     <td><c:out value="${discount.discountEndDate}"/></td>
                     <td><c:out value="${discount.shop}"/></td>
                     <td>
-                        <a href="edit-discount?id=<c:out value='${discount.id}' />"><fmt:message key="label.edit"/></a>
+                        <a href=front-controller?command=EDIT_DISCOUNT&id=<c:out value='${discount.id}'/>>
+                            <fmt:message key="label.edit"/></a>
                     </td>
                     <td>
                         <label><input type="checkbox" name="deleteDiscount"

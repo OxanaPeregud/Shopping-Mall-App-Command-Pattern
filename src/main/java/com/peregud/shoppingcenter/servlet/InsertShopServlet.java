@@ -1,24 +1,24 @@
 package com.peregud.shoppingcenter.servlet;
 
-import com.peregud.shoppingcenter.converter.ConverterImpl;
+import com.peregud.shoppingcenter.command.Command;
+import com.peregud.shoppingcenter.converter.impl.ConverterImpl;
 import com.peregud.shoppingcenter.model.Shop;
 import com.peregud.shoppingcenter.service.ServletShopService;
 import lombok.SneakyThrows;
 
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
 
-@WebServlet("/insert-shop")
-public class InsertShopServlet extends HttpServlet {
+public class InsertShopServlet implements Command {
     private final ServletShopService servletShopService = new ServletShopService();
 
     @SneakyThrows
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Shop shop = ConverterImpl.convert(Shop.class, request);
         servletShopService.save(shop);
-        response.sendRedirect(request.getContextPath() + "/list-shops");
+        response.sendRedirect("front-controller?command=LIST_SHOPS");
     }
 }

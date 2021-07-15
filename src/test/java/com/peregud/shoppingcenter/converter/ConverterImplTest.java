@@ -1,5 +1,6 @@
 package com.peregud.shoppingcenter.converter;
 
+import com.peregud.shoppingcenter.converter.impl.ConverterImpl;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.Shop;
 import org.junit.jupiter.api.Test;

@@ -15,7 +15,7 @@
 
 <body>
 
-<form name="search" action="${pageContext.request.contextPath}/search-shop" method="POST">
+<form name="search" action=front-controller?command=SEARCH_SHOP method="post">
 
     <div>
         <h3><fmt:message key="label.search"/></h3>

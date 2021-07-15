@@ -1,1 +1,1 @@
-<% response.sendRedirect(request.getContextPath() + "/shopping-center"); %>
+<% response.sendRedirect(request.getContextPath() + "/front-controller?command=MAP"); %>

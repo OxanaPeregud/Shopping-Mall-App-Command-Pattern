@@ -16,18 +16,19 @@
 
 <body>
 
-<button type="button" class="button"><a class="homepage" href="list-shops"><fmt:message key="label.allShops"/></a>
+<button type="button" class="button"><a class="homepage" href=front-controller?command=LIST_SHOPS>
+    <fmt:message key="label.allShops"/></a>
 </button>
 
 <div>
     <c:if test="${shop != null}">
     <form name="shopForm" onsubmit="return validateForm()"
-          action="${pageContext.request.contextPath}/update-shop" method="post">
+          action=front-controller?command=UPDATE_SHOP method="post">
         </c:if>
 
         <c:if test="${shop == null}">
         <form name="shopForm" onsubmit="return validateForm()"
-              action="${pageContext.request.contextPath}/insert-shop" method="post">
+              action=front-controller?command=INSERT_SHOP method="post">
             </c:if>
 
             <caption>

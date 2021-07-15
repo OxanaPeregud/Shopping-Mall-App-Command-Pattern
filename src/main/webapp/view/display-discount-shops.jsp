@@ -15,7 +15,8 @@
 
 <body>
 
-<button type="button" class="button"><a class="homepage" href="map"><fmt:message key="label.back"/></a></button>
+<button type="button" class="button"><a class="homepage" href=front-controller?command=MAP>
+    <fmt:message key="label.back"/></a></button>
 
 <div>
     <h1><fmt:message key="label.app"/></h1>
