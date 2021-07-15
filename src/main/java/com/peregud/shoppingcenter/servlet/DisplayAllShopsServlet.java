@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 @WebServlet("/display-all-shops")
 public class DisplayAllShopsServlet extends HttpServlet {
     private final ServletShopService servletShopService = new ServletShopService();
@@ -17,7 +19,7 @@ public class DisplayAllShopsServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         List<?> listShops = servletShopService.getList();
-        request.setAttribute("listShops", listShops);
+        request.setAttribute(ATTR_LIST_SHOPS, listShops);
         request.getRequestDispatcher("view/display-shops.jsp").forward(request, response);
     }
 }

@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 class ListDiscountsServletTest extends MockInit {
     ServletService<Discount> servletDiscountService = new ServletService<>();
 
@@ -24,7 +26,7 @@ class ListDiscountsServletTest extends MockInit {
         verify(requestDispatcher).forward(request, response);
 
         List<?> listDiscounts = servletDiscountService.getList(Discount.class);
-        verify(request).setAttribute("listDiscounts", listDiscounts);
+        verify(request).setAttribute(ATTR_LIST_DISCOUNTS, listDiscounts);
     }
 
     @Test
@@ -32,13 +34,13 @@ class ListDiscountsServletTest extends MockInit {
         when(request.getRequestDispatcher(any(String.class))).thenReturn(requestDispatcher);
         assertEquals(requestDispatcher, request.getRequestDispatcher("view/discounts-list.jsp"));
 
-        when(request.getParameterValues("deleteDiscount")).thenReturn(new String[]{});
+        when(request.getParameterValues(PARAM_DELETE_DISCOUNT)).thenReturn(new String[]{});
 
         new ListDiscountsServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
 
         List<?> listDiscounts = servletDiscountService.getList(Discount.class);
-        verify(request).setAttribute("listDiscounts", listDiscounts);
-        verify(request, atLeast(1)).getParameterValues("deleteDiscount");
+        verify(request).setAttribute(ATTR_LIST_DISCOUNTS, listDiscounts);
+        verify(request, atLeast(1)).getParameterValues(PARAM_DELETE_DISCOUNT);
     }
 }

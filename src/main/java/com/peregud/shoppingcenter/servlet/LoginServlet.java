@@ -11,6 +11,8 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
     private final ServletAdminService servletAdminService = new ServletAdminService();
@@ -23,16 +25,16 @@ public class LoginServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
-        String name = request.getParameter("name");
-        String password = request.getParameter("password");
+        String name = request.getParameter(PARAM_NAME);
+        String password = request.getParameter(PARAM_PASSWORD);
         if (servletAdminService.findAdmin(name, password)) {
             HttpSession session = request.getSession();
-            session.setAttribute("name", name);
-            if (request.getParameter("name").equals("admin")) {
-                session.setAttribute("admin", name);
+            session.setAttribute(ATTR_NAME, name);
+            if (request.getParameter(PARAM_NAME).equals(ATTR_ADMIN)) {
+                session.setAttribute(ATTR_ADMIN, name);
                 response.sendRedirect(request.getContextPath() + "/list-shops");
-            } else if (request.getParameter("name").equals("manager")) {
-                session.setAttribute("manager", name);
+            } else if (request.getParameter(PARAM_NAME).equals(ATTR_MANAGER)) {
+                session.setAttribute(ATTR_MANAGER, name);
                 response.sendRedirect(request.getContextPath() + "/display-discount-statistics");
             }
         } else {

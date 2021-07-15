@@ -12,6 +12,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 class ListShopsServletTest extends MockInit {
     ServletService<Shop> servletShopService = new ServletService<>();
 
@@ -24,7 +26,7 @@ class ListShopsServletTest extends MockInit {
         verify(requestDispatcher).forward(request, response);
 
         List<?> listShops = servletShopService.getList(Shop.class);
-        verify(request).setAttribute("listShops", listShops);
+        verify(request).setAttribute(ATTR_LIST_SHOPS, listShops);
     }
 
     @Test
@@ -32,13 +34,13 @@ class ListShopsServletTest extends MockInit {
         when(request.getRequestDispatcher(any(String.class))).thenReturn(requestDispatcher);
         assertEquals(requestDispatcher, request.getRequestDispatcher("view/shops-list.jsp"));
 
-        when(request.getParameterValues("deleteShop")).thenReturn(new String[]{});
+        when(request.getParameterValues(PARAM_DELETE_SHOP)).thenReturn(new String[]{});
 
         new ListShopsServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
 
         List<?> listShops = servletShopService.getList(Shop.class);
-        verify(request).setAttribute("listShops", listShops);
-        verify(request, atLeast(1)).getParameterValues("deleteShop");
+        verify(request).setAttribute(ATTR_LIST_SHOPS, listShops);
+        verify(request, atLeast(1)).getParameterValues(PARAM_DELETE_SHOP);
     }
 }

@@ -11,6 +11,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.*;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 class SearchShopServletTest extends MockInit {
 
     @Test
@@ -19,14 +21,14 @@ class SearchShopServletTest extends MockInit {
         assertEquals(requestDispatcher, request.getRequestDispatcher("view/display-shops.jsp"));
 
         String search = "name1";
-        when(request.getParameter("search")).thenReturn(search);
-        assertEquals(search, request.getParameter("search"));
+        when(request.getParameter(PARAM_SEARCH)).thenReturn(search);
+        assertEquals(search, request.getParameter(PARAM_SEARCH));
 
         new SearchShopServlet().doPost(request, response);
         verify(requestDispatcher).forward(request, response);
 
-        List<?> listShops = CriteriaSearchUtil.shopKeywords(request.getParameter("search"));
-        verify(request).setAttribute("listShops", listShops);
-        verify(request, atLeast(1)).getParameterValues(request.getParameter("search"));
+        List<?> listShops = CriteriaSearchUtil.shopKeywords(request.getParameter(PARAM_SEARCH));
+        verify(request).setAttribute(ATTR_LIST_SHOPS, listShops);
+        verify(request, atLeast(1)).getParameterValues(request.getParameter(PARAM_SEARCH));
     }
 }

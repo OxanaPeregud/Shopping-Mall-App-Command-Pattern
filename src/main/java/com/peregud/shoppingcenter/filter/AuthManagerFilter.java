@@ -7,6 +7,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 @WebFilter(filterName = "AuthManagerFilter", urlPatterns = {"/display-discount-statistics"})
 public class AuthManagerFilter implements Filter {
 
@@ -17,7 +19,7 @@ public class AuthManagerFilter implements Filter {
         HttpServletResponse res = (HttpServletResponse) response;
         String contextPath = req.getContextPath();
         HttpSession session = req.getSession();
-        if ((session != null) && (session.getAttribute("manager") != null)) {
+        if ((session != null) && (session.getAttribute(ATTR_MANAGER) != null)) {
             chain.doFilter(request, response);
         } else {
             res.sendRedirect(contextPath + "/view/admin-login.jsp");

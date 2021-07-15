@@ -13,6 +13,8 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
+import static com.peregud.shoppingcenter.command.CommandConstant.*;
+
 class DisplayAllDiscountsServletTest extends MockInit {
     ServletService<Discount> servletDiscountService = new ServletService<>();
 
@@ -25,6 +27,6 @@ class DisplayAllDiscountsServletTest extends MockInit {
         verify(requestDispatcher).forward(request, response);
 
         List<?> listDiscounts = servletDiscountService.getList(Discount.class);
-        verify(request).setAttribute("listDiscounts", listDiscounts);
+        verify(request).setAttribute(ATTR_LIST_DISCOUNTS, listDiscounts);
     }
 }
