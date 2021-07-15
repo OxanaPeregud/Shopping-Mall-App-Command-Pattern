@@ -1,7 +1,7 @@
 package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
-import com.peregud.shoppingcenter.service.ServletAdminService;
+import com.peregud.shoppingcenter.util.CheckAdminUtil;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -13,7 +13,6 @@ import java.io.PrintWriter;
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
 public class LoginCommand implements Command {
-    private final ServletAdminService servletAdminService = new ServletAdminService();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -21,7 +20,7 @@ public class LoginCommand implements Command {
         PrintWriter out = response.getWriter();
         String name = request.getParameter(PARAM_NAME);
         String password = request.getParameter(PARAM_PASSWORD);
-        if (servletAdminService.findAdmin(name, password)) {
+        if (CheckAdminUtil.findAdmin(name, password)) {
             HttpSession session = request.getSession();
             session.setAttribute(ATTR_NAME, name);
             if (request.getParameter(PARAM_NAME).equals(ATTR_ADMIN)) {

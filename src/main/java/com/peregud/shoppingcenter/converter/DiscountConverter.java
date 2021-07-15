@@ -1,9 +1,9 @@
-package com.peregud.shoppingcenter.converter.impl;
+package com.peregud.shoppingcenter.converter;
 
-import com.peregud.shoppingcenter.converter.Converter;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.ServletShopService;
+import com.peregud.shoppingcenter.service.ShopServletService;
+import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDate;
@@ -11,13 +11,13 @@ import java.util.Optional;
 
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
-public class DiscountConverterImpl implements Converter<Discount> {
-    private final ServletShopService servletShopService = new ServletShopService();
+public class DiscountConverter implements Converter<Discount> {
+    private final ShopServletService shopServletService = new ShopServletServiceImpl();
 
     @Override
     public Discount convert(HttpServletRequest request) {
         int shopId = Integer.parseInt(request.getParameter(PARAM_SHOP_ID));
-        Shop shop = servletShopService.getById(shopId);
+        Shop shop = shopServletService.getById(Shop.class, shopId);
         Discount.DiscountBuilder builder = Discount.builder();
         Optional.ofNullable(request.getParameter(PARAM_ID))
                 .map(Integer::parseInt)

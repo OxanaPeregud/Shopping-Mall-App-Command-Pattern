@@ -53,34 +53,14 @@ public abstract class AbstractDAO<T> {
         }
     }
 
-    public List<?> getAll(Class<T> clazz) {
+    @SuppressWarnings("unchecked")
+    public List<T> getAll(Class<T> clazz) {
         EntityManager entityManager = HibernateUtil.createEntityManager();
-        List<?> list = new ArrayList<>();
+        List<T> list = new ArrayList<>();
         try {
             entityManager.getTransaction().begin();
             list = entityManager
                     .createQuery("FROM " + clazz.getName())
-                    .getResultList();
-            entityManager.getTransaction().commit();
-        } catch (Exception e) {
-            e.printStackTrace();
-            entityManager.getTransaction().rollback();
-        } finally {
-            entityManager.close();
-        }
-        return list;
-    }
-
-    @SuppressWarnings("unchecked")
-    public List<?> selectIdForSet(T t, int id) {
-        EntityManager entityManager = HibernateUtil.createEntityManager();
-        t = (T) entityManager.find(t.getClass(), id);
-        List<?> list = new ArrayList<>();
-        try {
-            entityManager.getTransaction().begin();
-            list = entityManager
-                    .createQuery("SELECT " + id + " FROM " + t.getClass().getName() + " WHERE " + t + " = :" + t)
-                    .setParameter("t", t)
                     .getResultList();
             entityManager.getTransaction().commit();
         } catch (Exception e) {

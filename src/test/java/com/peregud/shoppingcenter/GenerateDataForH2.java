@@ -3,7 +3,12 @@ package com.peregud.shoppingcenter;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.DiscountStatistics;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.ServletService;
+import com.peregud.shoppingcenter.service.DiscountServletService;
+import com.peregud.shoppingcenter.service.ShopServletService;
+import com.peregud.shoppingcenter.service.impl.DiscountServletServiceImpl;
+import com.peregud.shoppingcenter.service.impl.DiscountStatisticsServletService;
+import com.peregud.shoppingcenter.service.impl.DiscountStatisticsServletServiceImpl;
+import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.time.LocalDate;
@@ -17,9 +22,9 @@ public class GenerateDataForH2 {
 
     @BeforeEach
     public void generate() {
-        ServletService<Shop> servletShopService = new ServletService<>();
-        ServletService<Discount> servletDiscountService = new ServletService<>();
-        ServletService<DiscountStatistics> servletDiscountStatisticsService = new ServletService<>();
+        ShopServletService shopServletService = new ShopServletServiceImpl();
+        DiscountServletService discountServletService = new DiscountServletServiceImpl();
+        DiscountStatisticsServletService discountStatisticsServletService = new DiscountStatisticsServletServiceImpl();
         shop1 = Shop.builder()
                 .id(1)
                 .name("name1")
@@ -48,10 +53,10 @@ public class GenerateDataForH2 {
                 .id(1)
                 .discount("10")
                 .build();
-        servletShopService.save(shop1);
-        servletShopService.save(shop2);
-        servletDiscountService.save(discount1);
-        servletDiscountService.save(discount2);
-        servletDiscountStatisticsService.save(discountStatistics);
+        shopServletService.save(shop1);
+        shopServletService.save(shop2);
+        discountServletService.save(discount1);
+        discountServletService.save(discount2);
+        discountStatisticsServletService.save(discountStatistics);
     }
 }

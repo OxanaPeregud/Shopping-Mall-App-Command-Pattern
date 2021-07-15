@@ -1,11 +1,12 @@
-package com.peregud.shoppingcenter.service;
+package com.peregud.shoppingcenter.util;
 
 import com.peregud.shoppingcenter.model.DiscountStatistics;
-import com.peregud.shoppingcenter.util.HibernateUtil;
+import lombok.experimental.UtilityClass;
 
 import javax.persistence.EntityManager;
 
-public class DiscountListenerService {
+@UtilityClass
+public class DiscountListenerUtil {
 
     public DiscountStatistics save(String discount) {
         EntityManager entityManager = HibernateUtil.createEntityManager();

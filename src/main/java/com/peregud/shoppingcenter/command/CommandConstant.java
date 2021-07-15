@@ -17,7 +17,6 @@ public class CommandConstant {
     public static final String PARAM_DELETE_SHOP = "deleteShop";
     public static final String PARAM_MIN_DISCOUNT = "minimumDiscount";
     public static final String PARAM_SEARCH = "search";
-    public static final String PARAM_CONTENT = "content";
     public static final String PARAM_COMMAND = "command";
 
     public static final String ATTR_ADMIN = "admin";

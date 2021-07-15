@@ -1,9 +1,10 @@
 package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
-import com.peregud.shoppingcenter.converter.impl.ConverterImpl;
+import com.peregud.shoppingcenter.converter.ConverterProvider;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.ServletShopService;
+import com.peregud.shoppingcenter.service.ShopServletService;
+import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
 import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
@@ -12,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class InsertShopCommand implements Command {
-    private final ServletShopService servletShopService = new ServletShopService();
+    private final ShopServletService shopServletService = new ShopServletServiceImpl();
 
     @SneakyThrows
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Shop shop = ConverterImpl.convert(Shop.class, request);
-        servletShopService.save(shop);
+        Shop shop = ConverterProvider.convert(Shop.class, request);
+        shopServletService.save(shop);
         response.sendRedirect("controller?command=list_shops");
     }
 }

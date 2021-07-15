@@ -1,7 +1,6 @@
-package com.peregud.shoppingcenter.command.impl;
+package com.peregud.shoppingcenter.command;
 
-import com.peregud.shoppingcenter.command.Command;
-import com.peregud.shoppingcenter.command.CommandType;
+import com.peregud.shoppingcenter.command.impl.*;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,7 +8,7 @@ import java.util.Optional;
 
 import static com.peregud.shoppingcenter.command.CommandType.*;
 
-public class CommandImpl {
+public class CommandProvider {
     private static final Map<CommandType, Command> COMMANDS;
 
     static {

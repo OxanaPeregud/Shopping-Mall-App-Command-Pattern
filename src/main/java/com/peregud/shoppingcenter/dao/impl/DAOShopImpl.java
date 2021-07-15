@@ -24,7 +24,7 @@ public class DAOShopImpl extends AbstractDAO<Shop> implements DAOShop {
     }
 
     @Override
-    public List<?> getAll(Class<Shop> clazz) {
+    public List<Shop> getAll(Class<Shop> clazz) {
         return super.getAll(clazz);
     }
 }

@@ -1,50 +1,34 @@
 package com.peregud.shoppingcenter.service;
 
-import com.peregud.shoppingcenter.GenerateDataForH2;
-import com.peregud.shoppingcenter.model.Discount;
+import com.peregud.shoppingcenter.util.CheckAdminUtil;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
+import org.mockito.MockitoAnnotations;
 
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
-import static org.mockito.ArgumentMatchers.any;
-import static org.mockito.Mockito.mock;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.Mockito.when;
 
-class ServletDiscountServiceTest extends GenerateDataForH2 {
-    ServletDiscountService servletDiscountService = new ServletDiscountService();
+class ServletDiscountServiceTest {
+
+    @BeforeEach
+    public void initMocks() {
+        MockitoAnnotations.initMocks(this);
+    }
+
+    @Mock
+    CheckAdminUtil checkAdminUtil;
 
     @Test
-    void getById_success() {
-        assertEquals(10, servletDiscountService.getById(Discount.class, 1).getDiscount());
+    void findAdmin_success() {
+        when(checkAdminUtil.findAdmin("name", "password")).thenReturn(true);
+        assertTrue(checkAdminUtil.findAdmin("name", "password"));
     }
 
     @Test
-    void getById_fail() {
-        assertNotEquals(50, servletDiscountService.getById(Discount.class, 1).getDiscount());
-    }
-
-    @SuppressWarnings("unchecked")
-    @Test
-    void getList_success() {
-        ServletDiscountService servletDiscountService = mock(ServletDiscountService.class);
-        List<?> list = List.of(discount1);
-        when(servletDiscountService.getList(any(Class.class))).thenReturn(list);
-        assertEquals(list, servletDiscountService.getList(Discount.class));
-    }
-
-    @SuppressWarnings("unchecked")
-    @Test
-    void getList_fail() {
-        ServletDiscountService servletDiscountService = mock(ServletDiscountService.class);
-        List<?> list = List.of(discount1);
-        when(servletDiscountService.getList(any(Class.class))).thenReturn(list);
-        assertNotEquals(List.of(Discount.builder()), servletDiscountService.getList(Discount.class));
-    }
-
-    @Test
-    void delete_success() {
-        servletDiscountService.delete(Discount.class, discount2.getId());
-        assertNull(servletDiscountService.getById(Discount.class, discount2.getId()));
+    void findAdmin_fail() {
+        when(checkAdminUtil.findAdmin("name", "password")).thenReturn(true);
+        assertFalse(checkAdminUtil.findAdmin("admin", "password"));
     }
 }

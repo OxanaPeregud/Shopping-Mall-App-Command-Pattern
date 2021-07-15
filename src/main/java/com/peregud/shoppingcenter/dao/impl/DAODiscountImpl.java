@@ -24,7 +24,7 @@ public class DAODiscountImpl extends AbstractDAO<Discount> implements DAODiscoun
     }
 
     @Override
-    public List<?> getAll(Class<Discount> clazz) {
+    public List<Discount> getAll(Class<Discount> clazz) {
         return super.getAll(clazz);
     }
 }

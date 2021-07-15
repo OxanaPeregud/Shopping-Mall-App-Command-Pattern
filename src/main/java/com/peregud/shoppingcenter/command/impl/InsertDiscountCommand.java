@@ -1,9 +1,10 @@
 package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
-import com.peregud.shoppingcenter.converter.impl.ConverterImpl;
+import com.peregud.shoppingcenter.converter.ConverterProvider;
 import com.peregud.shoppingcenter.model.Discount;
-import com.peregud.shoppingcenter.service.ServletDiscountService;
+import com.peregud.shoppingcenter.service.DiscountServletService;
+import com.peregud.shoppingcenter.service.impl.DiscountServletServiceImpl;
 import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
@@ -12,13 +13,13 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 public class InsertDiscountCommand implements Command {
-    private final ServletDiscountService servletDiscountService = new ServletDiscountService();
+    private final DiscountServletService discountServletService = new DiscountServletServiceImpl();
 
     @SneakyThrows
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Discount discount = ConverterImpl.convert(Discount.class, request);
-        servletDiscountService.save(discount);
+        Discount discount = ConverterProvider.convert(Discount.class, request);
+        discountServletService.save(discount);
         response.sendRedirect("controller?command=list_shops");
     }
 }

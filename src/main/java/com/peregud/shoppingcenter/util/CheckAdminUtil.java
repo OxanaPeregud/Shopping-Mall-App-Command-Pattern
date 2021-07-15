@@ -1,13 +1,14 @@
-package com.peregud.shoppingcenter.service;
+package com.peregud.shoppingcenter.util;
 
-import com.peregud.shoppingcenter.model.Admin;
-import com.peregud.shoppingcenter.util.HibernateUtil;
+import lombok.experimental.UtilityClass;
 
 import javax.persistence.EntityManager;
 
-import static com.peregud.shoppingcenter.command.CommandConstant.*;
+import static com.peregud.shoppingcenter.command.CommandConstant.PARAM_NAME;
+import static com.peregud.shoppingcenter.command.CommandConstant.PARAM_PASSWORD;
 
-public class ServletAdminService extends ServletService<Admin> {
+@UtilityClass
+public class CheckAdminUtil {
 
     public boolean findAdmin(String name, String password) {
         EntityManager entityManager = HibernateUtil.createEntityManager();

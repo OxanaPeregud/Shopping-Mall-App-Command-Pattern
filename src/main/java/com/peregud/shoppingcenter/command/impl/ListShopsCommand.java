@@ -1,7 +1,9 @@
 package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
-import com.peregud.shoppingcenter.service.ServletShopService;
+import com.peregud.shoppingcenter.model.Shop;
+import com.peregud.shoppingcenter.service.ShopServletService;
+import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -12,11 +14,11 @@ import java.util.List;
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
 public class ListShopsCommand implements Command {
-    private final ServletShopService servletShopService = new ServletShopService();
+    private final ShopServletService shopServletService = new ShopServletServiceImpl();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<?> listShops = servletShopService.getList();
+        List<?> listShops = shopServletService.getList(Shop.class);
         request.setAttribute(ATTR_LIST_SHOPS, listShops);
         request.getRequestDispatcher("view/shops-list.jsp").forward(request, response);
     }
