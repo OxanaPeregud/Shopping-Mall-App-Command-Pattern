@@ -6,8 +6,6 @@ public enum CommandType {
     DISPLAY_SHOPS,
     CONTACT,
     ADMIN_LOGIN,
-    DELETE_DISCOUNT,
-    DELETE_SHOP,
     DISPLAY_DISCOUNTS,
     DISCOUNT_STATISTICS,
     EDIT_DISCOUNT,
@@ -29,5 +27,9 @@ public enum CommandType {
     LIST_SHOPS,
     DELETE_LIST_SHOPS,
     INSERT_DISCOUNT,
-    INSERT_SHOP
+    INSERT_SHOP;
+
+    public static CommandType getCommandType(String name) {
+        return CommandType.valueOf(name.toUpperCase());
+    }
 }

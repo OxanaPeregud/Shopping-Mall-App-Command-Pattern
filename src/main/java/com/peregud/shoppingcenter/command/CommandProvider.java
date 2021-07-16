@@ -17,8 +17,6 @@ public class CommandProvider {
         COMMANDS.put(MAP, new MapCommand());
         COMMANDS.put(CONTACT, new ContactCommand());
         COMMANDS.put(ADMIN_LOGIN, new AdminLoginCommand());
-        COMMANDS.put(DELETE_DISCOUNT, new DeleteDiscountCommand());
-        COMMANDS.put(DELETE_SHOP, new DeleteShopCommand());
         COMMANDS.put(DISPLAY_SHOPS, new DisplayAllShopsCommand());
         COMMANDS.put(DISPLAY_DISCOUNTS, new DisplayAllDiscountsCommand());
         COMMANDS.put(DISCOUNT_STATISTICS, new DisplayDiscountStatisticsCommand());
@@ -45,6 +43,6 @@ public class CommandProvider {
     }
 
     public static Command getCommand(String name) throws Exception {
-        return Optional.ofNullable(COMMANDS.get(CommandType.valueOf(name.toUpperCase()))).orElseThrow(Exception::new);
+        return Optional.ofNullable(COMMANDS.get(CommandType.getCommandType(name))).orElseThrow(Exception::new);
     }
 }

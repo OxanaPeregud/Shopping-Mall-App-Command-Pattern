@@ -4,7 +4,6 @@ import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.command.CommandProvider;
 import lombok.SneakyThrows;
 
-import javax.servlet.ServletContext;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

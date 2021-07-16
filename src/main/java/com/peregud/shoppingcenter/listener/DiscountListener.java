@@ -13,7 +13,7 @@ public class DiscountListener implements ServletRequestAttributeListener {
     public void attributeAdded(ServletRequestAttributeEvent servletRequestAttributeEvent) {
         Object attributeValue = servletRequestAttributeEvent.getValue();
         String attributeName = servletRequestAttributeEvent.getName();
-        if (attributeName != null && attributeName.equals(ATTR_MIN_DISCOUNT)) {
+        if (ATTR_MIN_DISCOUNT.equals(attributeName)) {
             DiscountListenerUtil.save(attributeValue.toString());
         }
     }
