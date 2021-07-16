@@ -2,8 +2,8 @@ package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.ShopServletService;
-import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
+import com.peregud.shoppingcenter.service.ShopCommandService;
+import com.peregud.shoppingcenter.service.impl.ShopCommandServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,12 +14,12 @@ import java.util.List;
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
 public class DeleteListShopsCommand implements Command {
-    private final ShopServletService shopServletService = new ShopServletServiceImpl();
+    private final ShopCommandService shopCommandService = new ShopCommandServiceImpl();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        shopServletService.deleteList(Shop.class, request.getParameterValues(PARAM_DELETE_SHOP));
-        List<?> listShops = shopServletService.getList(Shop.class);
+        shopCommandService.deleteList(Shop.class, request.getParameterValues(PARAM_DELETE_SHOP));
+        List<?> listShops = shopCommandService.getList(Shop.class);
         request.setAttribute(ATTR_LIST_SHOPS, listShops);
         request.getRequestDispatcher("view/shops-list.jsp").forward(request, response);
     }

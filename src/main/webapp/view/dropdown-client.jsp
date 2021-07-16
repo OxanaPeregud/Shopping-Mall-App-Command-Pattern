@@ -10,7 +10,7 @@
 
 <head>
     <title><fmt:message key="label.mall"/></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/dropdown.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/dropdown-menu.css">
 </head>
 
 <body>
@@ -37,6 +37,9 @@
         </li>
         <li>
             <a href=controller?command=shop_actual_discounts><fmt:message key="label.searchActualDiscount"/></a>
+        </li>
+        <li>
+            <a href="display-paginated-list.jsp"><fmt:message key="label.paginatedList"/></a>
         </li>
     </ul>
 </label>

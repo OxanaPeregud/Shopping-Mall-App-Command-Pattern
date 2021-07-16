@@ -27,7 +27,8 @@ public enum CommandType {
     LIST_SHOPS,
     DELETE_LIST_SHOPS,
     INSERT_DISCOUNT,
-    INSERT_SHOP;
+    INSERT_SHOP,
+    PAGINATED_LIST;
 
     public static CommandType getCommandType(String name) {
         return CommandType.valueOf(name.toUpperCase());

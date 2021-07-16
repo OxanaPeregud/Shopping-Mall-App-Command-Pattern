@@ -10,7 +10,7 @@
 
 <head>
     <title><fmt:message key="label.mall"/></title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/dropdown.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/dropdown-menu.css">
 </head>
 
 <body>

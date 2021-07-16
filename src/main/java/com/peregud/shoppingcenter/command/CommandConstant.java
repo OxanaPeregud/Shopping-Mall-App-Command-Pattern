@@ -18,6 +18,8 @@ public class CommandConstant {
     public static final String PARAM_MIN_DISCOUNT = "minimumDiscount";
     public static final String PARAM_SEARCH = "search";
     public static final String PARAM_COMMAND = "command";
+    public static final String PARAM_PAGE_NUMBER = "pageNumber";
+    public static final String PARAM_PAGE_SIZE = "pageSize";
 
     public static final String ATTR_ADMIN = "admin";
     public static final String ATTR_MANAGER = "manager";

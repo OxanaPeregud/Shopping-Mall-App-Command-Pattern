@@ -2,7 +2,7 @@ package com.peregud.shoppingcenter.service;
 
 import java.util.List;
 
-public interface ServletService<T> {
+public interface CommandService<T> {
     T save(T t);
     T getById(Class<T> clazz, int id);
     List<T> getList(Class<T> clazz);

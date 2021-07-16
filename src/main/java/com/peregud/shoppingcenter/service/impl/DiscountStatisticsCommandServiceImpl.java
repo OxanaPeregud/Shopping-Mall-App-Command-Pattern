@@ -5,7 +5,8 @@ import com.peregud.shoppingcenter.model.DiscountStatistics;
 
 import java.util.List;
 
-public class DiscountStatisticsServletServiceImpl extends AbstractDAO<DiscountStatistics> implements DiscountStatisticsServletService {
+public class DiscountStatisticsCommandServiceImpl extends AbstractDAO<DiscountStatistics>
+        implements DiscountStatisticsCommandService {
 
     @Override
     public DiscountStatistics save(DiscountStatistics discountStatistics) {

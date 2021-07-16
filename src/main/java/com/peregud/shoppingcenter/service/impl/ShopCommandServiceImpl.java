@@ -2,11 +2,11 @@ package com.peregud.shoppingcenter.service.impl;
 
 import com.peregud.shoppingcenter.dao.AbstractDAO;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.ShopServletService;
+import com.peregud.shoppingcenter.service.ShopCommandService;
 
 import java.util.List;
 
-public class ShopServletServiceImpl extends AbstractDAO<Shop> implements ShopServletService {
+public class ShopCommandServiceImpl extends AbstractDAO<Shop> implements ShopCommandService {
 
     @Override
     public Shop save(Shop shop) {

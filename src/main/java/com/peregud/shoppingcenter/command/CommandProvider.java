@@ -40,6 +40,7 @@ public class CommandProvider {
         COMMANDS.put(DELETE_LIST_SHOPS, new DeleteListShopsCommand());
         COMMANDS.put(INSERT_DISCOUNT, new InsertDiscountCommand());
         COMMANDS.put(INSERT_SHOP, new InsertShopCommand());
+        COMMANDS.put(PAGINATED_LIST, new DisplayPaginatedListCommand());
     }
 
     public static Command getCommand(String name) throws Exception {

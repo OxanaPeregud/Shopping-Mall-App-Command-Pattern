@@ -2,8 +2,8 @@ package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.model.Discount;
-import com.peregud.shoppingcenter.service.DiscountServletService;
-import com.peregud.shoppingcenter.service.impl.DiscountServletServiceImpl;
+import com.peregud.shoppingcenter.service.DiscountCommandService;
+import com.peregud.shoppingcenter.service.impl.DiscountCommandServiceImpl;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -14,11 +14,11 @@ import java.util.List;
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
 public class ListDiscountsCommand implements Command {
-    private final DiscountServletService discountServletService = new DiscountServletServiceImpl();
+    private final DiscountCommandService discountCommandService = new DiscountCommandServiceImpl();
 
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        List<?> listDiscounts = discountServletService.getList(Discount.class);
+        List<?> listDiscounts = discountCommandService.getList(Discount.class);
         request.setAttribute(ATTR_LIST_DISCOUNTS, listDiscounts);
         request.getRequestDispatcher("view/discounts-list.jsp").forward(request, response);
     }

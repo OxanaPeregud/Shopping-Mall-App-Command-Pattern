@@ -2,11 +2,11 @@ package com.peregud.shoppingcenter.service.impl;
 
 import com.peregud.shoppingcenter.dao.AbstractDAO;
 import com.peregud.shoppingcenter.model.Discount;
-import com.peregud.shoppingcenter.service.DiscountServletService;
+import com.peregud.shoppingcenter.service.DiscountCommandService;
 
 import java.util.List;
 
-public class DiscountServletServiceImpl extends AbstractDAO<Discount> implements DiscountServletService {
+public class DiscountCommandServiceImpl extends AbstractDAO<Discount> implements DiscountCommandService {
 
     @Override
     public Discount save(Discount discount) {

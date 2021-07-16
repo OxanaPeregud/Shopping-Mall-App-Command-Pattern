@@ -3,12 +3,12 @@ package com.peregud.shoppingcenter;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.DiscountStatistics;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.DiscountServletService;
-import com.peregud.shoppingcenter.service.ShopServletService;
-import com.peregud.shoppingcenter.service.impl.DiscountServletServiceImpl;
-import com.peregud.shoppingcenter.service.impl.DiscountStatisticsServletService;
-import com.peregud.shoppingcenter.service.impl.DiscountStatisticsServletServiceImpl;
-import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
+import com.peregud.shoppingcenter.service.DiscountCommandService;
+import com.peregud.shoppingcenter.service.ShopCommandService;
+import com.peregud.shoppingcenter.service.impl.DiscountCommandServiceImpl;
+import com.peregud.shoppingcenter.service.impl.DiscountStatisticsCommandService;
+import com.peregud.shoppingcenter.service.impl.DiscountStatisticsCommandServiceImpl;
+import com.peregud.shoppingcenter.service.impl.ShopCommandServiceImpl;
 import org.junit.jupiter.api.BeforeEach;
 
 import java.time.LocalDate;
@@ -22,9 +22,9 @@ public class GenerateDataForH2 {
 
     @BeforeEach
     public void generate() {
-        ShopServletService shopServletService = new ShopServletServiceImpl();
-        DiscountServletService discountServletService = new DiscountServletServiceImpl();
-        DiscountStatisticsServletService discountStatisticsServletService = new DiscountStatisticsServletServiceImpl();
+        ShopCommandService shopCommandService = new ShopCommandServiceImpl();
+        DiscountCommandService discountCommandService = new DiscountCommandServiceImpl();
+        DiscountStatisticsCommandService discountStatisticsCommandService = new DiscountStatisticsCommandServiceImpl();
         shop1 = Shop.builder()
                 .id(1)
                 .name("name1")
@@ -53,10 +53,10 @@ public class GenerateDataForH2 {
                 .id(1)
                 .discount("10")
                 .build();
-        shopServletService.save(shop1);
-        shopServletService.save(shop2);
-        discountServletService.save(discount1);
-        discountServletService.save(discount2);
-        discountStatisticsServletService.save(discountStatistics);
+        shopCommandService.save(shop1);
+        shopCommandService.save(shop2);
+        discountCommandService.save(discount1);
+        discountCommandService.save(discount2);
+        discountStatisticsCommandService.save(discountStatistics);
     }
 }

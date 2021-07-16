@@ -134,9 +134,21 @@ public class CriteriaSearchUtil {
         return getObjects(entityManager, criteriaQuery);
     }
 
-    @NotNull
-    private static List<?> getObjects(EntityManager entityManager, CriteriaQuery<Tuple> criteriaQuery) {
+    public List<?> paginatedList(int pageNumber, int pageSize) {
+        EntityManager entityManager = HibernateUtil.createEntityManager();
+        CriteriaBuilder criteriaBuilder = entityManager.getCriteriaBuilder();
+        CriteriaQuery<Tuple> criteriaQuery = criteriaBuilder.createTupleQuery();
+        Root<Discount> root = criteriaQuery.from(Discount.class);
+        Join<Discount, Shop> join = root.join(Discount_.SHOP, JoinType.LEFT);
+        criteriaQuery.multiselect(root, join);
+        criteriaQuery.where(criteriaBuilder.greaterThan(root.get(Discount_.DISCOUNT_END_DATE), LocalDate.now()));
         TypedQuery<Tuple> query = entityManager.createQuery(criteriaQuery);
+        query.setFirstResult(pageSize * (pageNumber - 1));
+        query.setMaxResults(pageSize);
+        return getObjects(entityManager, query);
+    }
+
+    private static List<?> getObjects(EntityManager entityManager, TypedQuery<Tuple> query) {
         List<Tuple> shopDiscount = query.getResultList();
         List<ShopDiscountDto> shopDiscountDtoList = new ArrayList<>();
         shopDiscount.forEach(tuple -> {
@@ -150,5 +162,11 @@ public class CriteriaSearchUtil {
         });
         entityManager.close();
         return shopDiscountDtoList;
+    }
+
+    @NotNull
+    private static List<?> getObjects(EntityManager entityManager, CriteriaQuery<Tuple> criteriaQuery) {
+        TypedQuery<Tuple> query = entityManager.createQuery(criteriaQuery);
+        return getObjects(entityManager, query);
     }
 }

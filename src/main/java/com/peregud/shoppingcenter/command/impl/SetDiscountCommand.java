@@ -2,8 +2,8 @@ package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
 import com.peregud.shoppingcenter.model.Shop;
-import com.peregud.shoppingcenter.service.ShopServletService;
-import com.peregud.shoppingcenter.service.impl.ShopServletServiceImpl;
+import com.peregud.shoppingcenter.service.ShopCommandService;
+import com.peregud.shoppingcenter.service.impl.ShopCommandServiceImpl;
 import lombok.SneakyThrows;
 
 import javax.servlet.ServletException;
@@ -14,13 +14,13 @@ import java.io.IOException;
 import static com.peregud.shoppingcenter.command.CommandConstant.*;
 
 public class SetDiscountCommand implements Command {
-    private final ShopServletService shopServletService = new ShopServletServiceImpl();
+    private final ShopCommandService shopCommandService = new ShopCommandServiceImpl();
 
     @SneakyThrows
     @Override
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter(PARAM_ID));
-        Shop shop = shopServletService.getById(Shop.class, id);
+        Shop shop = shopCommandService.getById(Shop.class, id);
         request.setAttribute(ATTR_SHOP, shop);
         request.getRequestDispatcher("view/discount-form.jsp").forward(request, response);
     }
