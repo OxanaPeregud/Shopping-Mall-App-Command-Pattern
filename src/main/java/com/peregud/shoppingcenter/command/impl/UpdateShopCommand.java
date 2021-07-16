@@ -1,6 +1,7 @@
 package com.peregud.shoppingcenter.command.impl;
 
 import com.peregud.shoppingcenter.command.Command;
+import com.peregud.shoppingcenter.command.util.CommandRedirectUtil;
 import com.peregud.shoppingcenter.converter.ConverterProvider;
 import com.peregud.shoppingcenter.model.Shop;
 import com.peregud.shoppingcenter.service.ShopServletService;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
+import static com.peregud.shoppingcenter.command.CommandType.*;
+
 public class UpdateShopCommand implements Command {
     private final ShopServletService shopServletService = new ShopServletServiceImpl();
 
@@ -20,6 +23,6 @@ public class UpdateShopCommand implements Command {
     public void execute(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Shop shop = ConverterProvider.convert(Shop.class, request);
         shopServletService.save(shop);
-        response.sendRedirect("controller?command=list_shops");
+        response.sendRedirect(CommandRedirectUtil.page(LIST_SHOPS));
     }
 }
