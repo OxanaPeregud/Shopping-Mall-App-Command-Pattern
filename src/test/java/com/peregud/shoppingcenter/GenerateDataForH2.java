@@ -1,5 +1,6 @@
 package com.peregud.shoppingcenter;
 
+import com.peregud.shoppingcenter.model.Admin;
 import com.peregud.shoppingcenter.model.Discount;
 import com.peregud.shoppingcenter.model.DiscountStatistics;
 import com.peregud.shoppingcenter.model.Shop;
@@ -9,8 +10,10 @@ import com.peregud.shoppingcenter.service.impl.DiscountCommandServiceImpl;
 import com.peregud.shoppingcenter.service.impl.DiscountStatisticsCommandService;
 import com.peregud.shoppingcenter.service.impl.DiscountStatisticsCommandServiceImpl;
 import com.peregud.shoppingcenter.service.impl.ShopCommandServiceImpl;
+import com.peregud.shoppingcenter.util.HibernateUtil;
 import org.junit.jupiter.api.BeforeEach;
 
+import javax.persistence.EntityManager;
 import java.time.LocalDate;
 
 public class GenerateDataForH2 {
@@ -19,6 +22,7 @@ public class GenerateDataForH2 {
     protected Shop shop1;
     protected Shop shop2;
     protected DiscountStatistics discountStatistics;
+    protected Admin admin;
 
     @BeforeEach
     public void generate() {
@@ -53,10 +57,23 @@ public class GenerateDataForH2 {
                 .id(1)
                 .discount("10")
                 .build();
+
         shopCommandService.save(shop1);
         shopCommandService.save(shop2);
         discountCommandService.save(discount1);
         discountCommandService.save(discount2);
         discountStatisticsCommandService.save(discountStatistics);
+
+        admin = Admin.builder()
+                .role("admin")
+                .name("admin")
+                .password("1234")
+                .build();
+
+        EntityManager entityManager = HibernateUtil.createEntityManager();
+        entityManager.getTransaction().begin();
+        entityManager.merge(admin);
+        entityManager.getTransaction().commit();
+        entityManager.close();
     }
 }
