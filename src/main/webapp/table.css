@@ -1,0 +1,96 @@
+html {
+    margin-top: 20px;
+}
+
+h1, h2 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+form {
+    width: 100%;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid;
+}
+
+table, th, td {
+    border: 1px solid black;
+    text-align: center;
+}
+
+input {
+    margin: auto;
+}
+
+.right {
+    position: absolute;
+    margin-top: 15px;
+    right: 16px;
+    font-size: 18px;
+}
+
+#customers {
+    font-family: Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+#customers td, #customers th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+#customers tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+#customers tr:hover {
+    background-color: #ddd;
+}
+
+#customers th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color: #191970;
+    color: white;
+    font-size: large;
+}
+
+a:link {
+    color: #4682B4;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+footer {
+    margin-top: 50px;
+    text-decoration-color: #4682B4;
+    font-size: larger;
+}
+
+.button {
+    display: inline-block;
+    border-radius: 4px;
+    background-color: #B0C4DE;
+    border: 1;
+    color: #FFFFFF;
+    text-align: center;
+    font-size: 15px;
+    transition: all 0.5s;
+    cursor: pointer;
+    margin: 5px;
+    width: 15%;
+}
+
+.homepage {
+    color: white;
+    padding: 15px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
