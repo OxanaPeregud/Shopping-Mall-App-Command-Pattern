@@ -7,7 +7,7 @@ import com.peregud.shoppingcenter.model.Shop;
 import com.peregud.shoppingcenter.service.DiscountCommandService;
 import com.peregud.shoppingcenter.service.ShopCommandService;
 import com.peregud.shoppingcenter.service.impl.DiscountCommandServiceImpl;
-import com.peregud.shoppingcenter.service.impl.DiscountStatisticsCommandService;
+import com.peregud.shoppingcenter.service.DiscountStatisticsCommandService;
 import com.peregud.shoppingcenter.service.impl.DiscountStatisticsCommandServiceImpl;
 import com.peregud.shoppingcenter.service.impl.ShopCommandServiceImpl;
 import com.peregud.shoppingcenter.util.HibernateUtil;

@@ -1,7 +1,6 @@
-package com.peregud.shoppingcenter.service.impl;
+package com.peregud.shoppingcenter.service;
 
 import com.peregud.shoppingcenter.model.DiscountStatistics;
-import com.peregud.shoppingcenter.service.CommandService;
 
 public interface DiscountStatisticsCommandService extends CommandService<DiscountStatistics> {
 }

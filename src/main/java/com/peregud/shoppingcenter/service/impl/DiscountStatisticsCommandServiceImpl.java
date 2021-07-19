@@ -2,6 +2,7 @@ package com.peregud.shoppingcenter.service.impl;
 
 import com.peregud.shoppingcenter.dao.AbstractDAO;
 import com.peregud.shoppingcenter.model.DiscountStatistics;
+import com.peregud.shoppingcenter.service.DiscountStatisticsCommandService;
 
 import java.util.List;
 
